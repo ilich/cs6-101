@@ -37,6 +37,10 @@ namespace CSharp6
                 WriteLine($"Stack Trace:\n{err.StackTrace}");
                 WriteLine("FAIL!");
             }
+
+            // Try to dispose student using null propagation operator
+            (student as IDisposable)?.Dispose();
+            WriteLine("Dispose completed");
         }
 
         private static IDictionary<string, Mark> LoadTranscript()
