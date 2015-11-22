@@ -28,6 +28,6 @@ namespace CSharp6
 
         public double GPA => Transcript?.Average(t => (int)t.Value) ?? 0.0;
 
-        public override string ToString() => string.Format("{0}: {1}", StudentId, FullName);
+        public override string ToString() => $"{StudentId}: {FullName}";
     }
 }

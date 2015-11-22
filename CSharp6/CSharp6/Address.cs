@@ -56,8 +56,8 @@ namespace CSharp6
                 address += Environment.NewLine + Line2;
             }
 
-            return string.Format(@"{0}
-{1}, {2} {3}", address, City, State, ZipCode);
+            return string.Format($@"{address}
+{City}, {State} {ZipCode}");
         }
     }
 }

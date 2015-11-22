@@ -36,7 +36,7 @@ namespace CSharp6
 
         public string LastName { get; }
 
-        public string FullName => string.Format("{0} {1}", FirstName, LastName);
+        public string FullName => $"{FirstName} {LastName}";
 
         public DateTime DateOfBirth { get; }
 

@@ -21,10 +21,10 @@ namespace CSharp6
             WriteLine("----------------------------");
             WriteLine();
 
-            WriteLine("GPA (no transcript): {0}", student.GPA);
+            WriteLine($"GPA (no transcript): {student.GPA:0.00}");
 
             student.Transcript = LoadTranscript();
-            WriteLine("GPA: {0}", student.GPA);
+            WriteLine($"GPA: {student.GPA:0.00}");
         }
 
         private static IDictionary<string, Mark> LoadTranscript()
