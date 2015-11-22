@@ -13,22 +13,22 @@ namespace CSharp6
         {
             if (string.IsNullOrWhiteSpace(line1))
             {
-                throw new ArgumentNullException("line1");
+                throw new ArgumentNullException(nameof(line1));
             }
 
             if (string.IsNullOrWhiteSpace(city))
             {
-                throw new ArgumentNullException("city");
+                throw new ArgumentNullException(nameof(city));
             }
 
             if (string.IsNullOrWhiteSpace(state))
             {
-                throw new ArgumentNullException("state");
+                throw new ArgumentNullException(nameof(state));
             }
 
             if (string.IsNullOrWhiteSpace(zipCode))
             {
-                throw new ArgumentNullException("zipCode");
+                throw new ArgumentNullException(nameof(zipCode));
             }
 
             Line1 = line1;

@@ -14,7 +14,7 @@ namespace CSharp6
         {
             if (enrolmentDate <= dateOfBirth)
             {
-                throw new ArgumentException("Wrong enrolment date", "enrolmentDate");
+                throw new ArgumentException("Wrong enrolment date", nameof(enrolmentDate));
             }
 
             EnrolmentDate = enrolmentDate;

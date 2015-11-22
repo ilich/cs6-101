@@ -13,18 +13,18 @@ namespace CSharp6
         {
             if (string.IsNullOrWhiteSpace(firstName))
             {
-                throw new ArgumentNullException("firstName");
+                throw new ArgumentNullException(nameof(firstName));
             }
 
             if (string.IsNullOrWhiteSpace(lastName))
             {
-                throw new ArgumentNullException("lastName");
+                throw new ArgumentNullException(nameof(lastName));
             }
 
             var age = Age(dateOfBirth);
             if (age < MinAge)
             {
-                throw new ArgumentException("Person should be 18 years old or elder.", "dateOfBirth");
+                throw new ArgumentException("Person should be 18 years old or elder.", nameof(dateOfBirth));
             }
 
             FirstName = firstName;
