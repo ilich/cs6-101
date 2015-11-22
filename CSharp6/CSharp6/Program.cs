@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using static System.Console;
 
 namespace CSharp6
 {
@@ -8,26 +9,26 @@ namespace CSharp6
         public static void Main()
         {
             var student = new Student("1", "John", "Smith", new DateTime(1990, 1, 1), new DateTime(2015, 1, 1));
-            Console.WriteLine(student);
+            WriteLine(student);
             if (student.Address != null)
             {
-                Console.WriteLine(student.Address);
+                WriteLine(student.Address);
             }
 
             student.Address = new Address("9049 Main St", "Maple Grove", "MN", "55311", "Apt. 10");
-            Console.WriteLine("Address: ");
-            Console.WriteLine("----------------------------");
+            WriteLine("Address: ");
+            WriteLine("----------------------------");
             if (student.Address != null)
             {
-                Console.WriteLine(student.Address);
+                WriteLine(student.Address);
             }
 
-            Console.WriteLine("----------------------------");
+            WriteLine("----------------------------");
 
-            Console.WriteLine("GPA (no transcript): {0}", student.GPA);
+            WriteLine("GPA (no transcript): {0}", student.GPA);
 
             student.Transcript = LoadTranscript();
-            Console.WriteLine("GPA: {0}", student.GPA);
+            WriteLine("GPA: {0}", student.GPA);
         }
 
         private static IDictionary<string, Mark> LoadTranscript()
