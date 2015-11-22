@@ -38,19 +38,13 @@ namespace CSharp6
 
         public string LastName { get; private set; }
 
-        public string FullName
-        {
-            get { return string.Format("{0} {1}", FirstName, LastName); }
-        }
+        public string FullName => string.Format("{0} {1}", FirstName, LastName);
 
         public DateTime DateOfBirth { get; private set; }
 
         public Address Address { get; set; }
 
-        public override string ToString()
-        {
-            return FullName;
-        }
+        public override string ToString() => FullName;
 
         private int Age(DateTime birthday)
         {

@@ -36,6 +36,7 @@ namespace CSharp6
 
         public double GPA
         {
+            // Cannot use expression-bodied member here because there are few statements here
             get
             {
                 if (Transcript == null)
@@ -47,9 +48,6 @@ namespace CSharp6
             }
         }
 
-        public override string ToString()
-        {
-            return string.Format("{0}: {1}", StudentId, FullName);
-        }
+        public override string ToString() => string.Format("{0}: {1}", StudentId, FullName);
     }
 }
