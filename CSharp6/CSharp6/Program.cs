@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading;
 using static System.Console;
 
 namespace CSharp6
@@ -23,8 +25,18 @@ namespace CSharp6
 
             WriteLine($"GPA (no transcript): {student.GPA:0.00}");
 
-            student.Transcript = LoadTranscript();
-            WriteLine($"GPA: {student.GPA:0.00}");
+            try
+            {
+                // student.Transcript = LoadTranscript();
+                student.Transcript = LoadTranscriptWithException();
+                WriteLine($"GPA: {student.GPA:0.00}");
+            }
+            catch(Exception err) when(!Debugger.IsAttached)
+            {
+                WriteLine($"Error: {err.Message}");
+                WriteLine($"Stack Trace:\n{err.StackTrace}");
+                WriteLine("FAIL!");
+            }
         }
 
         private static IDictionary<string, Mark> LoadTranscript()
@@ -38,6 +50,31 @@ namespace CSharp6
             };
 
             return transcript;
+        }
+
+        private static int _fails;
+
+        private static IDictionary<string, Mark> LoadTranscriptWithException()
+        {
+            _fails = 0;
+            while (true)
+            {
+                try
+                {
+                    WriteLine("Loadin transcript...");
+                    throw new Exception("Cannot load transcript");
+                }
+                catch (Exception err) when (_fails > 10)
+                {
+                    WriteLine(err.Message);
+                    throw;
+                }
+                catch (Exception)
+                {
+                    _fails++;
+                    Thread.Sleep(1000);
+                }
+            }
         }
     }
 }
