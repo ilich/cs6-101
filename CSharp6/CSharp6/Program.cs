@@ -10,12 +10,14 @@ namespace CSharp6
         {
             var student = new Student("1", "John", "Smith", new DateTime(1990, 1, 1), new DateTime(2015, 1, 1));
             WriteLine(student);
-            WriteLine(student.Address?.ToString());
+            WriteLine(student.Location?.Home?.ToString());
 
-            student.Address = new Address("9049 Main St", "Maple Grove", "MN", "55311", "Apt. 10");
+            var address = new Address("9049 Main St", "Maple Grove", "MN", "55311", "Apt. 10");
+            student.SetHomeAddress(address);
+
             WriteLine("Address: ");
             WriteLine("----------------------------");
-            WriteLine(student.Address?.ToString());
+            WriteLine(student.Location?.Home?.ToString());
             WriteLine("----------------------------");
             WriteLine();
 

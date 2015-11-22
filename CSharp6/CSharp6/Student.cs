@@ -11,8 +11,7 @@ namespace CSharp6
             string firstName,
             string lastName,
             DateTime dateOfBirth,
-            DateTime enrolmentDate,
-            Address address = null) : base(firstName, lastName, dateOfBirth, address)
+            DateTime enrolmentDate) : base(firstName, lastName, dateOfBirth)
         {
             if (string.IsNullOrWhiteSpace(studentId))
             {

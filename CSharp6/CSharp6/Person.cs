@@ -9,8 +9,7 @@ namespace CSharp6
         public Person(
             string firstName, 
             string lastName, 
-            DateTime dateOfBirth, 
-            Address address = null)
+            DateTime dateOfBirth)
         {
             if (string.IsNullOrWhiteSpace(firstName))
             {
@@ -31,7 +30,6 @@ namespace CSharp6
             FirstName = firstName;
             LastName = lastName;
             DateOfBirth = dateOfBirth;
-            Address = address;
         }
 
         public string FirstName { get; private set; }
@@ -42,9 +40,29 @@ namespace CSharp6
 
         public DateTime DateOfBirth { get; private set; }
 
-        public Address Address { get; set; }
+        public Location Location { get; private set; }
 
         public override string ToString() => FullName;
+
+        public void SetHomeAddress(Address address)
+        {
+            if (Location == null)
+            {
+                Location = new Location();
+            }
+
+            Location.Home = address;
+        }
+
+        public void SetWorkAddress(Address address)
+        {
+            if (Location == null)
+            {
+                Location = new Location();
+            }
+
+            Location.Work = address;
+        }
 
         private int Age(DateTime birthday)
         {
