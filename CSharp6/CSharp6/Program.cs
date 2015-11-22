@@ -10,20 +10,14 @@ namespace CSharp6
         {
             var student = new Student("1", "John", "Smith", new DateTime(1990, 1, 1), new DateTime(2015, 1, 1));
             WriteLine(student);
-            if (student.Address != null)
-            {
-                WriteLine(student.Address);
-            }
+            WriteLine(student.Address?.ToString());
 
             student.Address = new Address("9049 Main St", "Maple Grove", "MN", "55311", "Apt. 10");
             WriteLine("Address: ");
             WriteLine("----------------------------");
-            if (student.Address != null)
-            {
-                WriteLine(student.Address);
-            }
-
+            WriteLine(student.Address?.ToString());
             WriteLine("----------------------------");
+            WriteLine();
 
             WriteLine("GPA (no transcript): {0}", student.GPA);
 
