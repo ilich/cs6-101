@@ -38,15 +38,15 @@ namespace CSharp6
             ZipCode = zipCode;
         }
 
-        public string Line1 { get; private set; }
+        public string Line1 { get; }
 
-        public string Line2 { get; private set; }
+        public string Line2 { get; }
         
-        public string City { get; private set; }
+        public string City { get; }
 
-        public string State { get; private set; }
+        public string State { get; }
 
-        public string ZipCode { get; private set; }
+        public string ZipCode { get; }
 
         public override string ToString()
         {

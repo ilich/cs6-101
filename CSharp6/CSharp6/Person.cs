@@ -32,13 +32,13 @@ namespace CSharp6
             DateOfBirth = dateOfBirth;
         }
 
-        public string FirstName { get; private set; }
+        public string FirstName { get; }
 
-        public string LastName { get; private set; }
+        public string LastName { get; }
 
         public string FullName => string.Format("{0} {1}", FirstName, LastName);
 
-        public DateTime DateOfBirth { get; private set; }
+        public DateTime DateOfBirth { get; }
 
         public Location Location { get; private set; }
 

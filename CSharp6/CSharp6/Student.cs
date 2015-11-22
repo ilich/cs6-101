@@ -20,9 +20,9 @@ namespace CSharp6
             EnrolmentDate = enrolmentDate;
         }
 
-        public DateTime EnrolmentDate { get; private set; }
+        public DateTime EnrolmentDate { get; }
 
-        public string StudentId { get; set; } = Guid.NewGuid().ToString();
+        public string StudentId => Guid.NewGuid().ToString();
 
         public IDictionary<string, Mark> Transcript { get; set; }
 
