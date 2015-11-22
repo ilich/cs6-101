@@ -8,7 +8,7 @@ namespace CSharp6
     {
         public static void Main()
         {
-            var student = new Student("1", "John", "Smith", new DateTime(1990, 1, 1), new DateTime(2015, 1, 1));
+            var student = new Student("John", "Smith", new DateTime(1990, 1, 1), new DateTime(2015, 1, 1));
             WriteLine(student);
             WriteLine(student.Location?.Home?.ToString());
 

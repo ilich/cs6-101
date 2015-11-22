@@ -7,29 +7,22 @@ namespace CSharp6
     class Student : Person
     {
         public Student(
-            string studentId,
             string firstName,
             string lastName,
             DateTime dateOfBirth,
             DateTime enrolmentDate) : base(firstName, lastName, dateOfBirth)
         {
-            if (string.IsNullOrWhiteSpace(studentId))
-            {
-                throw new ArgumentNullException("studentId");
-            }
-
             if (enrolmentDate <= dateOfBirth)
             {
                 throw new ArgumentException("Wrong enrolment date", "enrolmentDate");
             }
 
-            StudentId = studentId;
             EnrolmentDate = enrolmentDate;
         }
 
         public DateTime EnrolmentDate { get; private set; }
 
-        public string StudentId { get; private set; }
+        public string StudentId { get; set; } = Guid.NewGuid().ToString();
 
         public IDictionary<string, Mark> Transcript { get; set; }
 
