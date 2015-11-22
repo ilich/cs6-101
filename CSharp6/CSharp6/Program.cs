@@ -29,11 +29,13 @@ namespace CSharp6
 
         private static IDictionary<string, Mark> LoadTranscript()
         {
-            var transcript = new Dictionary<string, Mark>();
-            transcript.Add("Math", Mark.A);
-            transcript.Add("Science", Mark.B);
-            transcript.Add("Art", Mark.C);
-            transcript.Add("Programming", Mark.A);
+            var transcript = new Dictionary<string, Mark>()
+            {
+                ["Math"] = Mark.A,
+                ["Science"] = Mark.B,
+                ["Art"] = Mark.C,
+                ["Programming"] = Mark.A
+            };
 
             return transcript;
         }
