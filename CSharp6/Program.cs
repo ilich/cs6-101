@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
+using CSharp6.Exceptions;
 using static System.Console;
 
 namespace CSharp6
@@ -10,6 +11,9 @@ namespace CSharp6
     {
         public static void Main()
         {
+            var asyncExample = new AsyncExceptionHandlerSample();
+            asyncExample.Run();
+
             var student = new Student("John", "Smith", new DateTime(1990, 1, 1), new DateTime(2015, 1, 1));
             WriteLine(student);
             WriteLine(student.Location?.Home?.ToString());
